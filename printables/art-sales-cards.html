@@ -97,18 +97,33 @@
 
   .card-body {
     display: flex;
-    gap: 0.35in;
+    gap: 0.3in;
     flex: 1;
+  }
+  .card-image {
+    width: 1.9in;
+    height: 1.9in;
+    flex-shrink: 0;
+    border: 1.5px solid var(--ink);
+    overflow: hidden;
+    background: #F5F5F5;
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .card-main {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 0;
   }
   .card-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
+    font-size: 34px;
     line-height: 0.95;
     letter-spacing: 0.02em;
   }
@@ -241,6 +256,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/art-watercolor.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Watercolor Portrait</h2>
         <div class="card-subtitle">An original, one-of-a-kind piece</div>
@@ -249,11 +265,11 @@
           <span class="price-label">Each</span>
           <span class="price-value">$50</span>
         </div>
-        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld, show the confirmation at the art table &mdash; take your portrait home tonight.</div>
+        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld &mdash; then take your portrait home tonight. Honor system; thank you for supporting Abernethy.</div>
       </div>
       <div class="card-qr">
         <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/campaigns/art-sale-at-auction-party-2"></div>
-        <div class="qr-caption">Scan to pay<em>Show confirmation at the art table</em></div>
+        <div class="qr-caption">Scan to pay<em>Honor system &mdash; thank you</em></div>
       </div>
     </div>
     <div class="card-footer">
@@ -268,6 +284,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/art-circles.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Framed Paper Art &mdash; Circles</h2>
         <div class="card-subtitle">Ready to hang, made to love</div>
@@ -276,11 +293,11 @@
           <span class="price-label">Each</span>
           <span class="price-value">$40</span>
         </div>
-        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld, show the confirmation at the art table &mdash; take your piece home tonight.</div>
+        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld &mdash; then take your piece home tonight. Honor system; thank you for supporting Abernethy.</div>
       </div>
       <div class="card-qr">
         <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/campaigns/art-sale-at-auction-party-2"></div>
-        <div class="qr-caption">Scan to pay<em>Show confirmation at the art table</em></div>
+        <div class="qr-caption">Scan to pay<em>Honor system &mdash; thank you</em></div>
       </div>
     </div>
     <div class="card-footer">
@@ -290,7 +307,7 @@
   </div>
 </section>
 
-<!-- SHEET 2: Hand-Stamped Relief Print + Hirsch Mural Photo -->
+<!-- SHEET 2: Hirsch Mural Photo + Poetry Station -->
 <section class="sheet">
   <div class="card">
     <div class="card-header">
@@ -298,33 +315,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
-      <div class="card-main">
-        <h2 class="card-title">Hand-Stamped Relief Print</h2>
-        <div class="card-subtitle">Pulled by Abernethy students this spring</div>
-        <p class="card-hook">A hand-stamped relief print &mdash; indigo on paper, ready to frame. Each one's a little different, all of them charming.</p>
-        <div class="price-row">
-          <span class="price-label">Each</span>
-          <span class="price-value">$20</span>
-        </div>
-        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld, show the confirmation at the art table &mdash; take your print home tonight.</div>
-      </div>
-      <div class="card-qr">
-        <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/campaigns/art-sale-at-auction-party-2"></div>
-        <div class="qr-caption">Scan to pay<em>Show confirmation at the art table</em></div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <span>Art Sale &middot; betterworld.org</span>
-      <span class="brand-mark">auction.supportabernethy.org</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-eyebrow">FOR SALE <span class="serif">&middot; Take it home tonight</span></div>
-      <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
-    </div>
-    <div class="card-body">
+      <div class="card-image"><img src="images/art-hirsch-mural.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Hirsch Mural Photograph</h2>
         <div class="card-subtitle">A piece of the school on your wall</div>
@@ -333,11 +324,11 @@
           <span class="price-label">Each</span>
           <span class="price-value">$20</span>
         </div>
-        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld, show the confirmation at the art table &mdash; take your print home tonight.</div>
+        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld &mdash; then take your print home tonight. Honor system; thank you for supporting Abernethy.</div>
       </div>
       <div class="card-qr">
         <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/campaigns/art-sale-at-auction-party-2"></div>
-        <div class="qr-caption">Scan to pay<em>Show confirmation at the art table</em></div>
+        <div class="qr-caption">Scan to pay<em>Honor system &mdash; thank you</em></div>
       </div>
     </div>
     <div class="card-footer">
@@ -345,10 +336,7 @@
       <span class="brand-mark">auction.supportabernethy.org</span>
     </div>
   </div>
-</section>
 
-<!-- SHEET 3: Poetry Station (sliding scale tip) -->
-<section class="sheet">
   <div class="card">
     <div class="card-header">
       <div class="card-eyebrow">POETRY STATION <span class="serif">&middot; Pay what you can</span></div>
@@ -375,12 +363,77 @@
       <span class="brand-mark">auction.supportabernethy.org</span>
     </div>
   </div>
+</section>
 
-  <!-- Spare blank slot on sheet 3 — cut line left in place so you can trim sheet 3 down to single card. -->
-  <div class="card" style="opacity:0.35;">
-    <div style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#888;">
-      &mdash; cut along dashed line above &mdash;<br><br>
-      This half is blank. Discard or reuse.
+<!-- SHEET 3: Bottles & Bags -->
+<section class="sheet">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-eyebrow">FOR SALE <span class="serif">&middot; Take it home tonight</span></div>
+      <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
+    </div>
+    <div class="card-body">
+      <div class="card-image"><img src="images/art-bottles-bags.jpg" alt=""></div>
+      <div class="card-main">
+        <h2 class="card-title">Bottles &amp; Bags</h2>
+        <div class="card-subtitle">Choose a burlap bag &mdash; choose carefully</div>
+        <p class="card-hook">Every bag holds a mystery valued between $35 and $75 &mdash; a bottle, a treasure, a surprise. You won't know what you've chosen until the string comes undone.</p>
+        <div class="price-row">
+          <span class="price-label">Each</span>
+          <span class="price-value">$40</span>
+        </div>
+        <div class="card-meta"><strong>How to buy:</strong> Scan, complete your purchase on BetterWorld &mdash; then pick your mystery. Honor system; thank you for supporting Abernethy.</div>
+      </div>
+      <div class="card-qr">
+        <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/campaigns/art-sale-at-auction-party-2"></div>
+        <div class="qr-caption">Scan to pay<em>Honor system &mdash; thank you</em></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>Bottles &amp; Bags &middot; betterworld.org</span>
+      <span class="brand-mark">auction.supportabernethy.org</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-eyebrow">RAFFLE <span class="serif">&middot; Three drawings, three winners</span></div>
+      <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
+    </div>
+    <div class="card-body">
+      <div class="card-main">
+        <h2 class="card-title">Auction Raffle</h2>
+        <div class="card-subtitle">Three drawings throughout the night &middot; each prize valued at over $125</div>
+        <p class="card-hook">Buy tickets for a chance to win. Enter as many times as you like &mdash; one entry is good for all three drawings, and winners remain eligible for later drawings.</p>
+        <div style="margin-top:12px;border:2px solid var(--ink);">
+          <div style="display:grid;grid-template-columns:0.9in 1fr;gap:0;">
+            <div style="padding:8px 10px;background:var(--ink);color:var(--paper);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;">Drawing 1</div>
+            <div style="padding:8px 12px;border-bottom:1px dotted #BBB;">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.05em;">Lala Photography PDX</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--muted);">Monthly Special Session with 3 digital images</div>
+            </div>
+            <div style="padding:8px 10px;background:var(--ink);color:var(--paper);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;">Drawing 2</div>
+            <div style="padding:8px 12px;border-bottom:1px dotted #BBB;">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.05em;">Lone Fir Fitness</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--muted);">5-pack of group fitness classes</div>
+            </div>
+            <div style="padding:8px 10px;background:var(--ink);color:var(--paper);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;">Drawing 3</div>
+            <div style="padding:8px 12px;">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.05em;">Gift Card Bundle</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--muted);">Crisp Salads &middot; Cargo &middot; Kids at Heart &middot; Betsy &amp; Iya</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-meta"><strong>How to enter:</strong> Scan to buy tickets on BetterWorld. Three drawings throughout the evening &mdash; you don't need to be present to win.</div>
+      </div>
+      <div class="card-qr">
+        <div class="qr-box" data-qr="https://abernethyelementaryschool.betterworld.org/giveaways/auction-raffle-2026"></div>
+        <div class="qr-caption">Scan for tickets<em>One entry, three drawings</em></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>Raffle &middot; betterworld.org</span>
+      <span class="brand-mark">auction.supportabernethy.org</span>
     </div>
   </div>
 </section>

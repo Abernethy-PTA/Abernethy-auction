@@ -99,18 +99,32 @@
 
   .card-body {
     display: flex;
-    gap: 0.3in;
+    gap: 0.28in;
     flex: 1;
+  }
+  .card-image {
+    width: 2.0in;
+    height: 2.0in;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #F5F5F5;
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .card-main {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 0;
   }
   .card-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 0.95;
     letter-spacing: 0.02em;
   }
@@ -224,6 +238,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-music.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Music Recording &amp; Production Session</h2>
         <div class="card-subtitle">For aspiring songwriters, podcasters, and closet performers</div>
@@ -250,6 +265,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-nostrana.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Wine Dinner for Two at Nostrana</h2>
         <div class="card-subtitle">A proper Portland date night</div>
@@ -279,6 +295,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-magic-smiles.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">$1,000 Orthodontic Treatment Package</h2>
         <div class="card-subtitle">Magic Smiles Orthodontics</div>
@@ -305,6 +322,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-microneedling.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Consultation + Microneedling Treatment</h2>
         <div class="card-subtitle">A glow-up, on us</div>
@@ -334,6 +352,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-library.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Custom Built Little Free Library</h2>
         <div class="card-subtitle">With installation &mdash; a neighborhood favorite</div>
@@ -360,6 +379,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-beach-hotel.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Boutique Beach Hotel Stay</h2>
         <div class="card-subtitle">Oregon coast weekend</div>
@@ -389,6 +409,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-drawers.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Custom Wood Drawers + Knife Organizer</h2>
         <div class="card-subtitle">Art of Drawers &middot; kitchen design consult</div>
@@ -415,6 +436,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-portrait.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Children's Black &amp; White Portrait Session</h2>
         <div class="card-subtitle">A portrait session to frame forever</div>
@@ -444,6 +466,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-skateboard.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Complete Skateboard</h2>
         <div class="card-subtitle">Commonwealth Skate Shop</div>
@@ -470,6 +493,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-bowl.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Clay Studio Time + Handmade Bowl</h2>
         <div class="card-subtitle">Afterglow Pottery Studio</div>
@@ -499,6 +523,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-botjoy.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">BotJoy Mural on Canvas</h2>
         <div class="card-subtitle">By Gary Hirsch</div>
@@ -525,6 +550,7 @@
       <div class="card-brand">An Artful Affair &middot; 04.18.26</div>
     </div>
     <div class="card-body">
+      <div class="card-image"><img src="images/online-mudroom.jpg" alt=""></div>
       <div class="card-main">
         <h2 class="card-title">Clay Wheel Throwing Class</h2>
         <div class="card-subtitle">The Mud Room</div>
