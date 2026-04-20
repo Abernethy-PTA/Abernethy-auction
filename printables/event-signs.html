@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Signs &mdash; An Artful Affair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #000;
+    --paper: #FFF;
+    --cream: #FFFFFF;
+    --muted: #444;
+  }
+  @page { size: 8.5in 11in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    page-break-after: always;
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ===== BLOBS ===== */
+  .blob {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .blob-pink   { background: #FF3D7F; width: 3.4in;  height: 3.2in;  top: -1.6in;  left: -1.5in;  border-radius: 55% 45% 65% 35% / 40% 60% 40% 60%; opacity: 0.9; }
+  .blob-yellow { background: #FACC15; width: 2.6in;  height: 2.4in;  top: -1.2in;  right: -1.2in; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; opacity: 0.9; }
+  .blob-green  { background: #22C55E; width: 2.4in;  height: 2.2in;  bottom: -1.1in;left: -0.9in; border-radius: 55% 45% 50% 50% / 40% 60% 40% 60%; opacity: 0.9; }
+  .blob-orange { background: #F97316; width: 2.6in;  height: 2.4in;  bottom: -1.3in;right: -0.9in;border-radius: 60% 40% 55% 45% / 50% 50% 60% 40%; opacity: 0.9; }
+
+  .sign-frame {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 1in 0.7in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ===== EYEBROW ===== */
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--cream);
+    padding: 4px 10px;
+  }
+
+  /* ===== HEADLINE ===== */
+  .headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .headline .top {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+    color: #FF3D7F;
+  }
+  .headline .script {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 140px;
+    line-height: 0.95;
+    color: var(--ink);
+    display: inline-block;
+    transform: rotate(-4deg);
+    margin: 6px 0;
+    text-decoration: underline;
+    text-decoration-color: #FACC15;
+    text-decoration-thickness: 12px;
+    text-underline-offset: -6px;
+    text-decoration-skip-ink: none;
+  }
+  .headline .bot {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+    color: #3B82F6;
+  }
+
+  /* Variation for two-word signs where script is the subject */
+  .headline.alt .top {
+    font-size: 230px;
+  }
+  .headline.alt .script {
+    font-size: 120px;
+  }
+
+  /* ===== SUBTITLE / KICKER ===== */
+  .kicker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .kicker .haiku {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .kicker .haiku span { display: block; }
+  .kicker .haiku span:nth-child(2) { color: #22C55E; }
+  .kicker .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--muted);
+    max-width: 6.5in;
+    line-height: 1.35;
+  }
+
+  /* ===== EVENT TAG ===== */
+  .event-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--cream);
+    padding: 8px 16px;
+  }
+  .event-tag .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+  }
+  .event-tag .name em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .event-tag .meta {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  @media screen {
+    html, body { background: #eee; }
+    .page { margin: 0 auto 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIGN 1: CLOSED STAIRS -->
+<section class="page">
+  <div class="blob blob-pink"></div>
+  <div class="blob blob-yellow"></div>
+  <div class="blob blob-green"></div>
+  <div class="blob blob-orange"></div>
+
+  <div class="sign-frame">
+    <div class="eyebrow">Abernethy Elementary &ensp;&#10038;&ensp; 04.18.26</div>
+
+    <div class="headline">
+      <span class="top">CLOSED</span>
+      <span class="script">Stairs</span>
+    </div>
+
+    <div class="kicker">
+      <div class="haiku">
+        <span>These stairs sleep tonight</span>
+        <span>The evening blooms on this floor</span>
+        <span>Follow laughter here</span>
+      </div>
+    </div>
+
+    <div class="event-tag">
+      <div class="name">AN <em>Artful</em> AFFAIR</div>
+      <div class="meta">Live &amp; Online Auction</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN 2: NOT THIS DOOR -->
+<section class="page">
+  <div class="blob blob-pink"></div>
+  <div class="blob blob-yellow"></div>
+  <div class="blob blob-green"></div>
+  <div class="blob blob-orange"></div>
+
+  <div class="sign-frame">
+    <div class="eyebrow">Abernethy Elementary &ensp;&#10038;&ensp; 04.18.26</div>
+
+    <div class="headline">
+      <span class="top">NOT</span>
+      <span class="script">this door</span>
+    </div>
+
+    <div class="kicker">
+      <div class="haiku">
+        <span>Paint flecks on the floor</span>
+        <span>This threshold keeps to itself</span>
+        <span>Laughter lives elsewhere</span>
+      </div>
+    </div>
+
+    <div class="event-tag">
+      <div class="name">AN <em>Artful</em> AFFAIR</div>
+      <div class="meta">Live &amp; Online Auction</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN 3: ADDITIONAL BATHROOM OUTSIDE -->
+<section class="page">
+  <div class="blob blob-pink"></div>
+  <div class="blob blob-yellow"></div>
+  <div class="blob blob-green"></div>
+  <div class="blob blob-orange"></div>
+
+  <div class="sign-frame">
+    <div class="eyebrow">Abernethy Elementary &ensp;&#10038;&ensp; 04.18.26</div>
+
+    <div class="headline">
+      <span class="top">MORE</span>
+      <span class="script">restrooms</span>
+      <span class="bot">OUTSIDE</span>
+    </div>
+
+    <div class="kicker">
+      <div class="haiku">
+        <span>Step into the air</span>
+        <span>The night holds what you're needing</span>
+        <span>Relief stands waiting</span>
+      </div>
+    </div>
+
+    <div class="event-tag">
+      <div class="name">AN <em>Artful</em> AFFAIR</div>
+      <div class="meta">Live &amp; Online Auction</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN 4: CRYPTIC ART HAIKU (inside portapotty) -->
+<section class="page">
+  <div class="blob blob-pink"></div>
+  <div class="blob blob-yellow"></div>
+  <div class="blob blob-green"></div>
+  <div class="blob blob-orange"></div>
+
+  <div class="sign-frame">
+    <div class="eyebrow">&mdash; A note from the artist &mdash;</div>
+
+    <div class="kicker" style="gap:40px;">
+      <div class="haiku" style="font-size:46px;line-height:1.3;">
+        <span>Color finds the crack</span>
+        <span>Where the light refuses in</span>
+        <span>Paint yourself outward</span>
+      </div>
+    </div>
+
+    <div class="event-tag">
+      <div class="name">AN <em>Artful</em> AFFAIR</div>
+      <div class="meta">04.18.26 &middot; Abernethy PTA</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
